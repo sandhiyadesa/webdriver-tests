@@ -20,32 +20,17 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
-public class Login {
+public class LoginFirefox {
 
 	@Test
 	public void loginTests() throws IOException, InterruptedException {
 
-		//Edge
-//		EdgeOptions options = new EdgeOptions();
-//		DesiredCapabilities dc = new DesiredCapabilities(options);
-//		dc.setBrowserName("MicrosoftEdge");
 
-		//Chrome
-
-		ChromeOptions options = new ChromeOptions(); 
+		FirefoxOptions options = new FirefoxOptions(); 
 		DesiredCapabilities dc = new DesiredCapabilities(options); 
-		dc.setBrowserName("chrome");
-
-
-		//firefox
-
-//		FirefoxOptions options = new FirefoxOptions();
-//		DesiredCapabilities dc = new DesiredCapabilities(options);
-//		dc.setBrowserName("chrome");
-
-
-		//dc.setVersion("117.0");
-		//dc.setPlatform(Platform.LINUX);
+		dc.setBrowserName("firefox");
+		//dc.setVersion("120.0");
+		dc.setPlatform(Platform.LINUX);
 
 		RemoteWebDriver driver = new RemoteWebDriver(new URL("http://20.40.57.2:4444/wd/hub"), dc);
 
@@ -91,7 +76,7 @@ public class Login {
 		String timestamp = dateFormat.format(new Date());
 
 		// Construct the filename with the login date and time
-		String fileName = "login_" + timestamp + ".png";
+		String fileName = "login_Firefox_" + timestamp + ".png";
 
 		// Specify the full path for the screenshot
 		String fullPath = directoryPath + fileName;
